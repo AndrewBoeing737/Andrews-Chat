@@ -1,0 +1,17 @@
+p {
+ font-size: 2rem;
+  text-align: center;
+  line-height: 1.4;
+  color:green
+}
+body,html {
+  margin: 0;
+  font-family: sans-serif;
+}
+html {
+  height: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  background: url(https://i.gifer.com/origin/8d/8d36b40f75fad5a11e5fc267e03765f6_w200.gif?s=1024&d=identicon&r=PG) center no-repeat;
+  background-size: 100% 100%;
+}

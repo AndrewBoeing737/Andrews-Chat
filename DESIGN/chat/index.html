@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Andrews Chat</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css'><link rel="stylesheet" href="./style.css">
+ <script src="\eel.js"></script>
+ <script>
+ eel.expose(mynewmessage)
+ function mynewmessage(textmes){
+ $list = document.querySelector('#list');
+ $list.insertAdjacentHTML('beforeend','<div class="message text-only"><div class="response"> <p class="text">' +textmes+'</p></div></div>');
+ $list.scrollTop=$list.scrollHeight;}
+ eel.expose(yournewmessage)
+ function yournewmessage(textmes){
+ $list = document.querySelector('#list');
+ $list.insertAdjacentHTML('beforeend','<div class="message"><div class="online"></div></div><p class="text">' + textmes+ '</p></div>');
+$list.scrollTop=$list.scrollHeight;}
+  function sendmessage(){
+  var text=document.querySelector("#text").value
+  eel.sendmessage(text)
+$list.scrollTop=$list.scrollHeight;
+  }
+</script>
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<body>
+  <div class="container">
+    <div class="row">
+      <nav class="menu">
+        <ul class="items">
+          <li class="item">
+            <i class="fa fa-home" aria-hidden="true"></i>
+          </li>
+          <li class="item">
+            <i class="fa fa-user" aria-hidden="true"></i>
+          </li>
+          <li class="item">
+            <i class="fa fa-pencil" aria-hidden="true"></i>
+          </li>
+          <li class="item item-active">
+            <i class="fa fa-commenting" aria-hidden="true"></i>
+          </li>
+          <li class="item">
+            <i class="fa fa-file" aria-hidden="true"></i>
+          </li>
+          <li class="item">
+            <i class="fa fa-cog" aria-hidden="true"></i>
+          </li>
+        </ul>
+      </nav>
+
+      <section class="discussions">
+        <div class="discussion search">
+          <div class="searchbar">
+            <i class="fa fa-search" aria-hidden="true"></i>
+            <input type="text" placeholder="Search..."></input>
+          </div>
+        </div>
+    </section>
+      <div class="chat">
+        <div class="header-chat">
+          <i class="icon fa fa-user-o" aria-hidden="true"></i>
+          <p class="name">Чат школы 49</p>
+          <i class="icon clickable fa fa-ellipsis-h right" aria-hidden="true"></i>
+        </div>
+        <div class="messages-chat" id="list">
+
+</div>
+        <div class="footer-chat">
+          <i class="icon fa fa-smile-o clickable" style="font-size:25pt;" aria-hidden="true"></i>
+          <input type="text" class="write-message" placeholder="Type your message here" id="text"></input>
+          <i class="icon send fa fa-paper-plane-o clickable" onclick="sendmessage()" aria-hidden="true"></i>
+        </div>
+</div>
+    </div>
+  </div>
+</body>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
